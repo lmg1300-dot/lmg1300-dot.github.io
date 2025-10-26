@@ -46,3 +46,4 @@ Allow: /
 #User-agent: Webzio-Extended
 #User-agent: YouBot
 #Disallow: /
+Sitemap: https://wrestlingwithcoherence.com/sitemap.xml
