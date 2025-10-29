@@ -6,33 +6,86 @@
 <title>Terms of Use | Wrestling With Coherence</title>
 <meta name="description" content="Terms of Use for Wrestling With Coherence, a program of Cheagle LLC." />
 <style>
-body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#e6f4fa;color:#102a3a;margin:0;padding:40px;line-height:1.7;}
-main{max-width:800px;margin:auto;background:white;padding:40px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
-h1{text-align:center;color:#0ea5e9;margin-top:0}
-a{color:#0284c7;text-decoration:none}a:hover{text-decoration:underline}
-ul{padding-left:20px}
-footer{text-align:center;color:#4f6f80;margin-top:40px}
+body {
+  font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #e6f4fa;
+  color: #102a3a;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.7;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+}
+h1 {
+  text-align: center;
+  color: #0ea5e9;
+  margin-top: 0;
+}
+a {
+  color: #0284c7;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  padding-left: 20px;
+}
+footer {
+  text-align: center;
+  color: #4f6f80;
+  margin-top: 40px;
+}
 </style>
 </head>
+
 <body>
-<main>
-<h1>Terms of Use</h1>
-<p><strong>Effective Date:</strong> <span id="date"></span></p>
-<p>Welcome to Wrestling With Coherence, a program operated by Cheagle LLC (“we,” “us,” “our”). By accessing or using our website or services, you agree to the following terms.</p>
+  <main>
+    <h1>Terms of Use</h1>
+    <p><strong>Effective Date:</strong> <span id="date"></span></p>
+    <p>Welcome to Wrestling With Coherence, a program operated by Cheagle LLC (“we,” “us,” “our”). By accessing or using our website or services, you agree to the following terms.</p>
 
-<h2>1. Services</h2>
-<p>We provide educational wrestling and coherence programs focused on heart coherence, presence, emotional regulation training, and nervous system awareness. Sessions are offered individually, in groups, or with teams, either in person or online. These services are designed to help athletes cultivate focus, balance, and self-awareness in wrestling performance and are not intended as medical, therapeutic, or psychological treatment.</p>
+    <h2>1. Services</h2>
+    <p>We provide educational wrestling and coherence programs focused on heart coherence, presence, emotional regulation training, and nervous system awareness. Sessions are offered individually, in groups, or with teams, either in person or online. These services are designed to help athletes cultivate focus, balance, and self-awareness in wrestling performance and are not intended as medical, therapeutic, or psychological treatment.</p>
 
-<h2>2. Memberships and Billing</h2>
-<ul>
-<li>Memberships are monthly commitments billed bi-weekly through <a href="https://stripe.com">Stripe</a>.</li>
-<li>Payments are non-refundable once a billing cycle begins unless otherwise noted in our <a href="/refund.html">Refund & Cancellation Policy</a>.</li>
-<li>Members must provide at least <strong>48 hours’ notice</strong> by email to cancel or pause membership.</li>
-</ul>
+    <h2>2. Memberships and Billing</h2>
+    <ul>
+      <li>Memberships are monthly commitments billed bi-weekly through <a href="https://stripe.com">Stripe</a>.</li>
+      <li>Payments are non-refundable once a billing cycle begins unless otherwise noted in our <a href="/refund.html">Refund & Cancellation Policy</a>.</li>
+      <li>Members must provide at least <strong>48 hours’ notice</strong> by email to cancel or pause membership.</li>
+    </ul>
 
-<h2>3. Scheduling and Rescheduling</h2>
-<ul>
-<li><strong>Private sessions</strong> may be rescheduled if <strong>48 hours’ notice</strong> is provided via email.</li>
-<li><strong>Group sessions</strong> follow a set schedule and cannot be individually rescheduled or refunded if missed.</li>
-<li>Missed or late-canceled private sessions without proper notice will
+    <h2>3. Scheduling and Rescheduling</h2>
+    <ul>
+      <li><strong>Private sessions</strong> may be rescheduled if <strong>48 hours’ notice</strong> is provided via email.</li>
+      <li><strong>Group sessions</strong> follow a set schedule and cannot be individually rescheduled or refunded if missed.</li>
+      <li>Missed or late-canceled private sessions without proper notice will not be credited or refunded.</li>
+    </ul>
 
+    <h2>4. Conduct</h2>
+    <p>Participants are expected to engage respectfully and responsibly during sessions. We reserve the right to discontinue services for any behavior deemed disruptive or unsafe.</p>
+
+    <h2>5. Limitation of Liability</h2>
+    <p>All programs are educational and performance-based. We make no guarantees of specific outcomes and are not liable for any injury, loss, or damages related to participation.</p>
+
+    <h2>6. Updates</h2>
+    <p>We may revise these terms from time to time. Updates will be posted on this page with an updated effective date.</p>
+
+    <footer>
+      <p>© <span id="y"></span> Cheagle LLC • Wrestling With Coherence</p>
+      <p><a href="/" style="font-weight:600; color:#0ea5e9;">Back to Home</a></p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('date').textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
