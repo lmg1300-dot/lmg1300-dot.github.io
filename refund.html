@@ -6,12 +6,65 @@
 <title>Refund & Cancellation Policy | Wrestling With Coherence</title>
 <meta name="description" content="Refund & Cancellation Policy for Wrestling With Coherence, a program of Cheagle LLC." />
 <style>
-body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#e6f4fa;color:#102a3a;margin:0;padding:40px;line-height:1.7;}
-main{max-width:800px;margin:auto;background:white;padding:40px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
-h1{text-align:center;color:#0ea5e9;margin-top:0}
-a{color:#0284c7;text-decoration:none}a:hover{text-decoration:underline}
-ul{padding-left:20px}
-footer{text-align:center;color:#4f6f80;margin-top:40px}
+body {
+  font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #e6f4fa;
+  color: #102a3a;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.7;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+}
+
+h1 {
+  text-align: center;
+  color: #0ea5e9;
+  margin-top: 0;
+}
+
+a {
+  color: #0284c7;
+  text-decoration: none;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+p, li {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  color: #4f6f80;
+  margin-top: 40px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+  main {
+    padding: 20px;
+  }
+}
 </style>
 </head>
 <body>
@@ -52,13 +105,16 @@ footer{text-align:center;color:#4f6f80;margin-top:40px}
 
 <footer>
 <p>© <span id="y"></span> Cheagle LLC • Wrestling With Coherence</p>
-<a href="/index.html">Back to Home</a>
+<a href="/index.html" style="font-weight:600; color:#0ea5e9;">Back to Home</a>
 </footer>
 </main>
+
 <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  document.getElementById('date').textContent = new Date().toISOString().slice(0,10);
+const today = new Date();
+document.getElementById('y').textContent = today.getFullYear();
+document.getElementById('date').textContent = today.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 </script>
 </body>
 </html>
+
 
