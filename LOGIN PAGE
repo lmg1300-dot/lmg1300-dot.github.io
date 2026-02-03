@@ -1,0 +1,221 @@
+import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { MessageCircle, Lock, LogOut, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { createClient } from "@supabase/supabase-js";
+
+// =============================
+// SUPABASE SETUP (PLACEHOLDERS)
+// =============================
+const supabaseUrl = "https://YOUR_PROJECT_ID.supabase.co";
+const supabaseAnonKey = "YOUR_PUBLIC_ANON_KEY";
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+// =============================
+// LEVEL DEFINITIONS
+// =============================
+const LEVELS = {
+  1: "Foundation",
+  2: "Integration",
+  3: "Embodiment",
+};
+
+export default function WrestlingWithCoherenceApp() {
+  const [session, setSession] = useState(null);
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [profile, setProfile] = useState(null);
+  const [messages, setMessages] = useState([
+    { user: "Coach", text: "Welcome to the Coherence Community 🧠🥋" },
+  ]);
+  const [newMessage, setNewMessage] = useState("");
+  const [lessons, setLessons] = useState([
+    { id: 1, title: "Heart–Breath Sync", completed: false },
+    { id: 2, title: "Pre‑Match Regulation", completed: false },
+  ]);
+
+  // =============================
+  // AUTH STATE
+  // =============================
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+    return () => listener.subscription.unsubscribe();
+  }, []);
+
+  // =============================
+  // FETCH / CREATE PROFILE
+  // =============================
+  useEffect(() => {
+    if (!session?.user) return;
+    (async () => {
+      const { data } = await supabase
+        .from("profiles")
+        .select("level")
+        .eq("id", session.user.id)
+        .single();
+
+      if (!data) {
+        const { data: created } = await supabase
+          .from("profiles")
+          .insert({ id: session.user.id, level: 1 })
+          .select()
+          .single();
+        setProfile(created);
+      } else {
+        setProfile(data);
+      }
+    })();
+  }, [session]);
+
+  // =============================
+  // MAGIC LINK LOGIN
+  // =============================
+  const signInWithEmail = async () => {
+    setLoading(true);
+    await supabase.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: window.location.origin },
+    });
+    setLoading(false);
+    alert("Check your email for the login link.");
+  };
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    setSession(null);
+    setProfile(null);
+  };
+
+  // =============================
+  // COMMUNITY CHAT (FRONT-END)
+  // =============================
+  const sendMessage = () => {
+    if (!newMessage.trim()) return;
+    setMessages([...messages, { user: "You", text: newMessage }]);
+    setNewMessage("");
+  };
+
+  // =============================
+  // PROGRESS TRACKING (FRONT-END)
+  // =============================
+  const completeLesson = (id) => {
+    setLessons(
+      lessons.map((l) => (l.id === id ? { ...l, completed: true } : l))
+    );
+  };
+
+  // =============================
+  // LOGIN SCREEN
+  // =============================
+  if (!session) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-neutral-950 text-white">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <Card className="w-[380px] rounded-2xl shadow-xl bg-neutral-900 border-neutral-800">
+            <CardContent className="p-6 space-y-4">
+              <div className="text-center space-y-1">
+                <Lock className="mx-auto h-6 w-6 text-emerald-400" />
+                <h1 className="text-xl font-semibold">Wrestling With Coherence</h1>
+                <p className="text-sm text-neutral-400">Email Login</p>
+              </div>
+              <Input
+                placeholder="you@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-neutral-800 border-neutral-700"
+              />
+              <Button
+                onClick={signInWithEmail}
+                disabled={loading}
+                className="w-full rounded-xl bg-emerald-500 hover:bg-emerald-600"
+              >
+                {loading ? "Sending link…" : "Send Login Link"}
+              </Button>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    );
+  }
+
+  // =============================
+  // DASHBOARD
+  // =============================
+  return (
+    <div className="min-h-screen bg-neutral-950 text-white p-4 flex flex-col gap-4">
+      <header className="flex items-center justify-between">
+        <div>
+          <h2 className="text-lg font-semibold">Dojo Dashboard</h2>
+          {profile && (
+            <p className="text-sm text-neutral-400">
+              Level {profile.level} — {LEVELS[profile.level]}
+            </p>
+          )}
+        </div>
+        <Button onClick={signOut} variant="ghost">
+          <LogOut className="h-4 w-4" />
+        </Button>
+      </header>
+
+      {/* COURSE */}
+      <Card className="bg-neutral-900 border-neutral-800">
+        <CardContent className="p-4 space-y-3">
+          <h3 className="font-semibold">Course</h3>
+          {lessons.map((l) => (
+            <div key={l.id} className="flex items-center justify-between">
+              <span className={l.completed ? "text-emerald-400" : ""}>{l.title}</span>
+              {l.completed ? (
+                <CheckCircle className="text-emerald-400" />
+              ) : (
+                <Button size="sm" onClick={() => completeLesson(l.id)}>
+                  Complete
+                </Button>
+              )}
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      {/* COMMUNITY */}
+      {profile?.level >= 2 && (
+        <Card className="bg-neutral-900 border-neutral-800 flex-1">
+          <CardContent className="p-4 flex flex-col h-full">
+            <div className="flex items-center gap-2 mb-2">
+              <MessageCircle className="text-emerald-400" />
+              <h3 className="font-semibold">Community Room</h3>
+            </div>
+            <div className="flex-1 overflow-y-auto space-y-2 mb-2">
+              {messages.map((msg, i) => (
+                <div
+                  key={i}
+                  className={`p-2 rounded-xl max-w-[75%] ${
+                    msg.user === "You" ? "bg-emerald-600 ml-auto" : "bg-neutral-800"
+                  }`}
+                >
+                  <p className="text-xs opacity-70">{msg.user}</p>
+                  <p>{msg.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <Input
+                value={newMessage}
+                onChange={(e) => setNewMessage(e.target.value)}
+                placeholder="Share from coherence…"
+                className="bg-neutral-800 border-neutral-700"
+              />
+              <Button onClick={sendMessage}>Send</Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
