@@ -1,36 +1,131 @@
-<script>
-  // Use the global Supabase object provided by the CDN
-  const supabaseClient = supabase.createClient(
-    "https://mzgpoywetbzmkanwglqh.supabase.co",
-    "sb_publishable_OPlr6jJkydnsSGsoeLpWuw_nNt66omz"
-  );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wrestling With Coherence – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  const btn = document.getElementById("loginBtn");
-  const emailInput = document.getElementById("email");
-  const message = document.getElementById("message");
+  <!-- Supabase CDN -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
-  btn.addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-    if (!email) return;
-
-    btn.disabled = true;
-    btn.innerText = "Sending link…";
-
-    const { error } = await supabaseClient.auth.signInWithOtp({
-      email,
-      options: {
-        emailRedirectTo: "https://lmg1300-dot.github.io/dashboard.html"
-      }
-    });
-
-    if (error) {
-      alert(error.message);
-    } else {
-      message.style.display = "block";
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
-    btn.innerText = "Send Magic Link";
-    btn.disabled = false;
-  });
-</script>
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    p {
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #059669;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+    }
+
+    .message {
+      margin-top: 1rem;
+      color: #059669;
+      font-weight: 500;
+      display: none;
+    }
+
+    .small {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Wrestling With Coherence</h1>
+    <p>Enter your email to access the dojo</p>
+
+    <input type="email" id="email" placeholder="you@email.com" />
+    <button id="loginBtn">Send Magic Link</button>
+
+    <div id="message" class="message">
+      Check your email — your link is on the way 🟢
+    </div>
+
+    <div class="small">
+      Passwordless beta access
+    </div>
+  </div>
+
+  <script>
+    // IMPORTANT: use a DIFFERENT variable name
+    const supabaseClient = supabase.createClient(
+      "https://mzgpoywetbzmkanwglqh.supabase.co",
+      "sb_publishable_OPlr6jJkydnsSGsoeLpWuw_nNt66omz"
+    );
+
+    const btn = document.getElementById("loginBtn");
+    const emailInput = document.getElementById("email");
+    const message = document.getElementById("message");
+
+    btn.addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      btn.disabled = true;
+      btn.innerText = "Sending link…";
+
+      const { error } = await supabaseClient.auth.signInWithOtp({ email });
+
+      if (!error) {
+        message.style.display = "block";
+      } else {
+        alert(error.message);
+      }
+
+      btn.innerText = "Send Magic Link";
+      btn.disabled = false;
+    });
+  </script>
+
+</body>
+</html>
 
