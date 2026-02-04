@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wrestling With Coherence – Dojo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Supabase CDN -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #020617;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: 2rem;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: #064e3b;
+      color: #34d399;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: none;
+      background: #059669;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="badge">Level 1 · Foundation</span>
+    <h1>Welcome to the Dojo</h1>
+    <p id="userEmail">Loading…</p>
+
+    <p>
+      You are inside the Wrestling With Coherence space.<br>
+      Community and training unlock progressively.
+    </p>
+
+    <button id="logoutBtn">Log out</button>
+  </div>
+
+  <script>
+    const supabase = supabase.createClient(
+      "https://mzgpoywetbzmkanwglqh.supabase.co",
+      "sb_publishable_OPlr6jJkydnsSGsoeLpWuw_nNt66omz"
+    );
+
+    const emailEl = document.getElementById("userEmail");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    async function loadSession() {
+      const { data } = await supabase.auth.getSession();
+
+      if (!data.session) {
+        window.location.href = "/login.html";
+        return;
+      }
