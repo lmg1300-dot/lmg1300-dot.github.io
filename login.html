@@ -111,7 +111,13 @@
       btn.disabled = true;
       btn.innerText = "Sending link…";
 
-      const { error } = await supabase.auth.signInWithOtp({ email });
+      const { error } = await supabase.auth.signInWithOtp({
+  email,
+  options: {
+    emailRedirectTo: "https://lmg1300-dot.github.io/dashboard.html"
+  }
+});
+
 
       if (!error) {
         message.style.display = "block";
