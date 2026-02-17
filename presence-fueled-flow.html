@@ -1,7 +1,6 @@
-<!doctype html>
-<html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Presence-Fueled Flow | Wrestling With Coherence</title>
 
@@ -13,53 +12,151 @@
   <meta name="author" content="Luis González" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/images/wrestler-favicon.png" sizes="16x16 32x32">
-  <link rel="apple-touch-icon" href="/images/wrestler-favicon.png">
+  <link rel="icon" type="image/png" href="https://wrestlingwithcoherence.com/images/wrestler-favicon.png?v=3" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="https://wrestlingwithcoherence.com/images/wrestler-favicon.png?v=3">
+  <link rel="icon" type="image/png" href="/images/wrestler-favicon.png?v=3" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="/images/wrestler-favicon.png?v=3">
   <meta name="theme-color" content="#0ea5e9">
 
+  <!-- SEO & Social -->
+  <meta name="description" content="Daily presence-fueled flow practices for wrestlers: Gratitude Coherence, Teabags, visualization, and checklist integrity." />
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Presence-Fueled Flow | Wrestling With Coherence" />
+  <meta property="og:description" content="Daily presence-fueled flow practices for wrestlers: Gratitude Coherence, Teabags, visualization, and checklist integrity." />
+  <meta property="og:image" content="https://wrestlingwithcoherence.com/images/WWC-logo.png" />
   <meta property="og:description" content="Daily practices for wrestlers: Gratitude Coherence, Teabags, visualization, and checklist integrity to access presence-fueled flow." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://wrestlingwithcoherence.com/presence-fueled-flow" />
+
   <meta property="og:site_name" content="Wrestling With Coherence" />
-  <meta property="og:image" content="https://wrestlingwithcoherence.com/images/presence-fueled-flow-og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/png" />
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Presence-Fueled Flow: Coaches Emphasize Daily Process Integrity Over Performance Metrics",
+    "author": {
+      "@type": "Person",
+      "name": "Luis González"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wrestling With Coherence",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wrestlingwithcoherence.com/images/WWC-logo.png"
+      }
+    },
+    "datePublished": "2026-02-17",
+    "description": "Discover presence-fueled flow for wrestlers: daily practices like Gratitude Coherence, Teabags, visualization, and checklist integrity for mastery."
+  }
+  </script>
 
   <!-- Theme Styles -->
   <style>
+    :root {
+      --bg:#e6f4fa; --bg2:#d2eef7; --bg3:#c0e5f5; --card:#ffffff;
+      --ink:#102a3a; --muted:#4f6f80; --accent:#0ea5e9; --accent2:#22c55e;
+      --shadow:0 6px 20px rgba(0,0,0,.15); --radius:18px;
+    }
+    body {
+      margin:0; font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg2),var(--bg3)); color:var(--ink);
+      line-height:1.6; padding:20px;
+    }
+    header {text-align:center; margin-bottom:30px;}
+    header img {height:60px; width:auto;}
+    h1 {text-align:center; font-size:clamp(28px,5vw,42px); margin-bottom:0.3em;}
+    p.lead {text-align:center; font-size:18px; color:var(--muted); margin-top:0;}
+    h2 {color:var(--accent); margin-top:1.5em;}
+    blockquote {border-left:4px solid var(--ink); padding-left:10px; font-style:italic; margin:20px 0;}
+    ul {margin-left:20px; margin-bottom:1em;}
+    strong {color:var(--accent2);}
   :root{
-    --bg:#e6f4fa; --bg2:#d2eef7; --bg3:#c0e5f5; --card1:#ffffff; --card2:#f0faff;
-    --ink:#102a3a; --muted:#4f6f80; --accent:#0ea5e9; --accent2:#22c55e;
-    --link:#0284c7; --shadow:0 6px 20px rgba(0,0,0,.15); --radius:18px;
+    --bg:#e6f4fa; --bg2:#d2eef7; --bg3:#c0e5f5; --card1:#ffffff; --card2:#f0faff; --ink:#102a3a; --muted:#4f6f80; --accent:#0ea5e9; --accent2:#22c55e; --link:#0284c7; --shadow:0 6px 20px rgba(0,0,0,.15); --radius:18px; --paren:#94a3b8;
   }
   *{box-sizing:border-box}
-  html,body{margin:0; background:linear-gradient(180deg,var(--bg2),var(--bg3)); color:var(--ink);
-    font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  html,body{ margin:0; background:linear-gradient(180deg,var(--bg2),var(--bg3)); color:var(--ink); font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif }
   a{color:var(--link);text-decoration:none}
   a:hover{text-decoration:underline}
   img{max-width:100%;height:auto;display:block;border:none}
-  .wrap{ max-width:1100px; margin:auto; padding:20px; }
-  header{ position:sticky;top:0; background:linear-gradient(180deg, rgba(210,238,247,.95),rgba(192,229,245,.85));
-    backdrop-filter:blur(6px); z-index:10; border-bottom:1px solid #a6d8f0 }
+  .wrap{ max-width:1100px; margin:auto; padding:20px; padding-left:max(20px, env(safe-area-inset-left)); padding-right:max(20px, env(safe-area-inset-right)); }
+  header{ position:sticky;top:0; background:linear-gradient(180deg, rgba(210,238,247,.95),rgba(192,229,245,.85)); backdrop-filter:blur(6px); z-index:10; border-bottom:1px solid #a6d8f0 }
   .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
   .brand img{height:60px;width:auto;display:block}
-  .pill{padding:.6rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    color:#06201e;font-weight:700;box-shadow:var(--shadow);white-space:nowrap}
+  .pill{padding:.6rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06201e;font-weight:700;box-shadow:var(--shadow);white-space:nowrap}
   .ghost{padding:.6rem 1rem;border:1px solid #a6d8f0;border-radius:999px;color:#152c38}
-  .card{background:linear-gradient(180deg,var(--card1),var(--card2));
-    border:1px solid #a6d8f0;border-radius:var(--radius);box-shadow:var(--shadow);
-    padding:24px;margin-bottom:24px;}
+  .hero{padding:48px 0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px;}
+  .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin:.2rem 0;text-align:center; width:100%}
+  .hero p.lead{text-align:center;font-size:clamp(16px,2.5vw,19px);color:var(--muted);margin:0 0 1rem; width:100%}
+  .card{background:linear-gradient(180deg,var(--card1),var(--card2));border:1px solid #a6d8f0;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column; margin-bottom:24px;}
   .card h2{margin-top:0;}
+  .card h3{margin-top:16px;}
   .list{margin-left:20px;}
   blockquote{border-left:4px solid var(--ink); padding-left:15px; font-style:italic; margin:20px 0;}
   footer{padding:32px 0;color:var(--muted);text-align:center;}
+  @media (max-width:768px){ .hero{padding:32px 0;} .hero h1{font-size:32px;} .hero p.lead{font-size:18px;} .wrap{padding:15px;} }
   </style>
 </head>
 <body>
 
+  <header>
+    <img src="https://wrestlingwithcoherence.com/images/WWC-logo.png" alt="Wrestling With Coherence logo" />
+  </header>
+
+  <h1>Presence-Fueled Flow</h1>
+  <p class="lead">Daily Process Integrity Over Performance Metrics</p>
+
+  <p>In a culture obsessed with performance outcomes, a quieter movement is gaining traction — one centered not on results, but on regulated presence.</p>
+
+  <p>Coaches within presence-fueled flow frameworks emphasize that mastery is not achieved through force or intensity, but through daily internal alignment.</p>
+
+  <h2>Flow Is a Byproduct of Regulation</h2>
+  <p><strong>Flow emerges when the nervous system feels safe, regulated, and aligned.</strong></p>
+  <p>Not when it is forced.</p>
+  <blockquote>
+    Presence precedes flow.<br>
+    If the body is dysregulated, flow cannot stabilize.
+  </blockquote>
+
+  <h2>Gratitude Coherence (GC)</h2>
+  <ul>
+    <li>Reduced internal pressure</li>
+    <li>Increased clarity</li>
+    <li>Greater emotional range</li>
+    <li>Smoother transitions into flow</li>
+  </ul>
+
+  <h2>“Teabags” (TBs): Emotional Regulation in Motion</h2>
+  <ul>
+    <li>Release accumulated tension</li>
+    <li>Restore neutrality</li>
+    <li>Return to presence</li>
+  </ul>
+
+  <h2>Passive & Active Visualizations</h2>
+  <ul>
+    <li><strong>Passive:</strong> Seeing oneself grounded and steady.</li>
+    <li><strong>Active:</strong> Rehearsing pressure while maintaining regulated breath and emotional neutrality.</li>
+  </ul>
+
+  <h2>The Daily Checklist</h2>
+  <ul>
+    <li>GC</li>
+    <li>TBs</li>
+    <li>Passive visualization</li>
+    <li>Active visualization</li>
+    <li>Reflection</li>
+    <li>Intent setting</li>
+    <li>Nervous system awareness</li>
+    <li>Personal accountability tracking</li>
+  </ul>
+
+  <blockquote>
+    Flow doesn’t respond to effort alone.<br>
+    It responds to coherence.
+  </blockquote>
 <header>
   <div class="wrap nav">
     <div class="brand">
@@ -73,16 +170,31 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap cols">
+      <div>
+        <h1>Presence-Fueled Flow</h1>
+        <p class="lead">Daily Process Integrity Over Performance Metrics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
   <section id="article">
     <div class="wrap">
       <article class="card">
         <h2>Presence-Fueled Flow</h2>
         <p><strong>Coaches Emphasize Daily Process Integrity Over Performance Metrics</strong></p>
+
         <p>In a culture obsessed with performance outcomes, a quieter movement is gaining traction — one centered not on results, but on regulated presence.</p>
-        <p>Mastery comes from daily internal alignment, not force or intensity.</p>
+
+        <p>Coaches within presence-fueled flow frameworks emphasize that mastery is not achieved through force or intensity, but through daily internal alignment.</p>
 
         <h3>Flow Is a Byproduct of Regulation</h3>
         <p><strong>Flow emerges when the nervous system feels safe, regulated, and aligned.</strong></p>
+        <p>Not when it is forced.</p>
         <blockquote>
         Presence precedes flow.<br>
         If the body is dysregulated, flow cannot stabilize.
@@ -96,7 +208,7 @@
           <li>Smoother transitions into flow</li>
         </ul>
 
-        <h3>“Teabags” (TBs)</h3>
+        <h3>“Teabags” (TBs): Emotional Regulation in Motion</h3>
         <ul class="list">
           <li>Release accumulated tension</li>
           <li>Restore neutrality</li>
@@ -129,12 +241,11 @@
       </article>
     </div>
   </section>
+
 </main>
 
 <footer>
-  <div class="wrap">© <span id="y"></span> Cheagle LLC • Wrestling With Coherence • 
-    <a href="/privacy.html">Privacy Policy</a> • <a href="/terms.html">Terms</a>
-  </div>
+  <div class="wrap">© <span id="y"></span> Cheagle LLC • Wrestling With Coherence • <a href="/privacy.html">Privacy Policy</a> • <a href="/terms.html">Terms</a></div>
 </footer>
 
 <script>
@@ -143,6 +254,4 @@ document.getElementById('y').textContent = new Date().getFullYear();
 
 </body>
 </html>
-
-
 
