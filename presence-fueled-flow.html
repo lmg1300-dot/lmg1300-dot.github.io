@@ -4,240 +4,175 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Presence-Fueled Flow | Wrestling With Coherence</title>
-
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="/images/wrestler-favicon.png?v=3" sizes="16x16 32x32">
 <link rel="apple-touch-icon" href="/images/wrestler-favicon.png?v=3">
 <meta name="theme-color" content="#0ea5e9">
-
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Presence-Fueled Flow: Coaches Emphasize Daily Process Integrity Over Performance Metrics",
+"author": {
+"@type": "Person",
+"name": "Luis González"
+},
+"publisher": {
+"@type": "Organization",
+"name": "Wrestling With Coherence",
+"logo": {
+"@type": "ImageObject",
+"url": "https://wrestlingwithcoherence.com/images/WWC-logo.png"
+}
+},
+"datePublished": "2026-02-17",
+"description": "Discover presence-fueled flow for wrestlers: daily practices like Gratitude Coherence, Teabags, visualization, and checklist integrity for mastery."
+}
+</script>
+<!-- Theme Styles -->
 <style>
 :root{
-  --bg:#e6f4fa;
-  --bg2:#d2eef7;
-  --bg3:#c0e5f5;
-  --card1:#ffffff;
-  --card2:#f0faff;
-  --ink:#102a3a;
-  --muted:#4f6f80;
-  --accent:#0ea5e9;
-  --accent2:#22c55e;
-  --shadow:0 6px 20px rgba(0,0,0,.15);
-  --radius:18px;
+--bg:#e6f4fa;
+--bg2:#d2eef7;
+--bg3:#c0e5f5;
+--card1:#ffffff;
+--card2:#f0faff;
+--ink:#102a3a;
+--muted:#4f6f80;
+--accent:#0ea5e9;
+--accent2:#22c55e;
+--link:#0284c7;
+--shadow:0 6px 20px rgba(0,0,0,.15);
+--radius:18px;
+--paren:#94a3b8;
 }
-
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
+html,body{
+margin:0;
+background:linear-gradient(180deg,var(--bg2),var(--bg3));
+color:var(--ink);
+font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif
 }
-
-body{
-  margin:0;
-  background:linear-gradient(180deg,var(--bg2),var(--bg3));
-  color:var(--ink);
-  font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
-
-a{text-decoration:none;color:inherit}
-
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block;border:none}
 .wrap{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+max-width:1100px;
+margin:auto;
+padding:20px;
+padding-left:max(20px, env(safe-area-inset-left));
+padding-right:max(20px, env(safe-area-inset-right));
 }
-
 header{
-  position:sticky;
-  top:0;
-  background:linear-gradient(180deg, rgba(210,238,247,.95),rgba(192,229,245,.85));
-  backdrop-filter:blur(6px);
-  z-index:100;
-  border-bottom:1px solid #a6d8f0;
+position:sticky;
+top:0;
+background:linear-gradient(180deg, rgba(210,238,247,.95),rgba(192,229,245,.85));
+backdrop-filter:blur(6px);
+z-index:10;
+border-bottom:1px solid #a6d8f0
 }
-
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:16px;
-}
-
-.brand img{
-  height:60px;
-}
-
-.pill{
-  padding:.7rem 1.2rem;
-  border-radius:999px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  font-weight:700;
-  color:#06201e;
-  box-shadow:var(--shadow);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-
-.pill:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-
-.ghost{
-  padding:.6rem 1rem;
-  border:1px solid #a6d8f0;
-  border-radius:999px;
-}
-
-.hero{
-  padding:60px 0;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:clamp(30px,5vw,44px);
-  margin:.2rem 0;
-}
-
-.hero p{
-  font-size:clamp(16px,2.5vw,20px);
-  color:var(--muted);
-}
-
-.hero .cta-wrap{
-  margin-top:28px;
-}
-
-.card{
-  background:linear-gradient(180deg,var(--card1),var(--card2));
-  border:1px solid #a6d8f0;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:28px;
-  margin-bottom:36px;
-}
-
-.list{
-  margin-left:20px;
-}
-
-blockquote{
-  border-left:4px solid var(--ink);
-  padding-left:15px;
-  font-style:italic;
-  margin:24px 0;
-}
-
-#accountability{
-  scroll-margin-top:120px;
-}
-
-footer{
-  padding:32px 0;
-  text-align:center;
-  color:var(--muted);
-}
-
+.nav{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.brand img{height:60px;width:auto;display:block}
+.pill{padding:.6rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06201e;font-weight:700;box-shadow:var(--shadow);white-space:nowrap}
+.ghost{padding:.6rem 1rem;border:1px solid #a6d8f0;border-radius:999px;color:#152c38}
+.hero{padding:48px 0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px;}
+.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin:.2rem 0;text-align:center; width:100%}
+.hero p.lead{text-align:center;font-size:clamp(16px,2.5vw,19px);color:var(--muted);margin:0 0 1rem; width:100%}
+.card{background:linear-gradient(180deg,var(--card1),var(--card2));border:1px solid #a6d8f0;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column; margin-bottom:24px;}
+.card h2{margin-top:0;}
+.card h3{margin-top:16px;}
+.list{margin-left:20px;}
+blockquote{border-left:4px solid var(--ink); padding-left:15px; font-style:italic; margin:20px 0;}
+footer{padding:32px 0;color:var(--muted);text-align:center;}
 @media (max-width:768px){
-  .hero{
-    padding:40px 0;
-  }
+.hero{padding:32px 0;}
+.hero h1{font-size:32px;}
+.hero p.lead{font-size:18px;}
+.wrap{padding:15px;}
 }
 </style>
 </head>
-
 <body>
-
 <header>
-  <div class="wrap nav">
-    <div class="brand">
-      <img src="/images/WWC-logo.png" alt="Wrestling With Coherence Logo">
-    </div>
-    <nav>
-      <a class="ghost" href="/">Home</a>
-      <a class="pill" href="#accountability">Take the Quiz</a>
-    </nav>
-  </div>
+<div class="wrap nav">
+<div class="brand">
+<img src="/images/WWC-logo.png" alt="Wrestling With Coherence logo" />
+</div>
+<nav class="cta">
+<a class="ghost" href="/">Home</a>
+<a class="pill" href="#article">Read Article</a>
+</nav>
+</div>
 </header>
-
 <main>
-
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap">
-    <h1>Presence-Fueled Flow</h1>
-    <p>Daily Process Integrity Over Metrics</p>
-
-    <div class="cta-wrap">
-      <a class="pill" href="#accountability">Start Daily Accountability</a>
-    </div>
-  </div>
+<div class="wrap cols">
+<div>
+<h1>Presence-Fueled Flow</h1>
+<p class="lead">Daily Process Integrity Over Performance Metrics</p>
+</div>
+</div>
 </section>
-
-<section>
-  <div class="wrap">
-    <div class="card">
-      <h2>Presence-Fueled Flow</h2>
-      <p><strong>Daily internal alignment over forced output.</strong></p>
-
-      <p>Flow emerges when the nervous system feels safe, regulated, and aligned.</p>
-
-      <blockquote>
-        Presence precedes flow.<br>
-        If the body is dysregulated, flow cannot stabilize.
-      </blockquote>
-
-      <h3>The Daily Checklist</h3>
-      <ul class="list">
-        <li>Gratitude Coherence</li>
-        <li>Teabags (Emotional Regulation)</li>
-        <li>Passive Visualization</li>
-        <li>Active Visualization</li>
-        <li>Reflection</li>
-        <li>Intent Setting</li>
-        <li>Nervous System Awareness</li>
-        <li>Personal Accountability Tracking</li>
-      </ul>
-
-      <blockquote>
-        Flow responds to coherence.
-      </blockquote>
-    </div>
-  </div>
+<!-- ARTICLE CONTENT -->
+<section id="article">
+<div class="wrap">
+<article class="card">
+<h2>Presence-Fueled Flow</h2>
+<p><strong>Coaches Emphasize Daily Process Integrity Over Performance Metrics</strong></p>
+<p>In a culture obsessed with performance outcomes, a quieter movement is gaining traction — one centered not on results, but on regulated presence.</p>
+<p>Coaches within presence-fueled flow frameworks emphasize that mastery is not achieved through force or intensity, but through daily internal alignment.</p>
+<h3>Flow Is a Byproduct of Regulation</h3>
+<p><strong>Flow emerges when the nervous system feels safe, regulated, and aligned.</strong></p>
+<p>Not when it is forced.</p>
+<blockquote>
+Presence precedes flow.<br>
+If the body is dysregulated, flow cannot stabilize.
+</blockquote>
+<h3>Gratitude Coherence (GC)</h3>
+<ul class="list">
+<li>Reduced internal pressure</li>
+<li>Increased clarity</li>
+<li>Greater emotional range</li>
+<li>Smoother transitions into flow</li>
+</ul>
+<h3>“Teabags” (TBs): Emotional Regulation in Motion</h3>
+<ul class="list">
+<li>Release accumulated tension</li>
+<li>Restore neutrality</li>
+<li>Return to presence</li>
+</ul>
+<h3>Passive & Active Visualizations</h3>
+<ul class="list">
+<li><strong>Passive:</strong> Seeing oneself grounded and steady.</li>
+<li><strong>Active:</strong> Rehearsing pressure while maintaining regulated breath and emotional neutrality.</li>
+</ul>
+<h3>The Daily Checklist</h3>
+<ul class="list">
+<li>GC</li>
+<li>TBs</li>
+<li>Passive visualization</li>
+<li>Active visualization</li>
+<li>Reflection</li>
+<li>Intent setting</li>
+<li>Nervous system awareness</li>
+<li>Personal accountability tracking</li>
+</ul>
+<blockquote>
+Flow doesn’t respond to effort alone.<br>
+It responds to coherence.
+</blockquote>
+</article>
+</div>
 </section>
-
-<section id="accountability">
-  <div class="wrap">
-    <div class="card">
-      <h2>Daily Accountability Quiz</h2>
-      <p>
-        Presence is trained daily — even on rest days.<br>
-        Flow is earned through coherence.
-      </p>
-
-      <div style="width:100%; max-width:900px; margin:auto;">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfRvSDFdZddIrBcnKF8TcsiYF5bs896xDVUkAjjqUKkzMpoLA/viewform?embedded=true"
-          width="100%"
-          height="1700"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0">
-          Loading…
-        </iframe>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 </main>
-
 <footer>
-  © <span id="year"></span> Cheagle LLC • Wrestling With Coherence
+<div class="wrap">© <span id="y"></span> Cheagle LLC • Wrestling With Coherence • <a href="/privacy.html">Privacy Policy</a> • <a href="/terms.html">Terms</a></div>
 </footer>
-
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('y').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
 
