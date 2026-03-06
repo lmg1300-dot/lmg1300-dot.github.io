@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Full Body Awareness | Wrestling With Coherence</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/wrestler-favicon.png?v=3" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="/images/wrestler-favicon.png?v=3">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Full Body Awareness: Internal Perspective Enhances River Coherence in Wrestling",
+    "author": {
+      "@type": "Person",
+      "name": "Luis González"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wrestling With Coherence",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wrestlingwithcoherence.com/images/WWC-logo.png"
+      }
+    },
+    "datePublished": "2026-03-06",
+    "description": "Learn why full body awareness strengthens presence, amplifies River Coherence, and integrates the nervous system using internal martial arts principles."
+  }
+  </script>
+
+  <!-- Theme Styles -->
+  <style>
+  :root{
+    --bg:#e6f4fa; --bg2:#d2eef7; --bg3:#c0e5f5; --card1:#ffffff; --card2:#f0faff; --ink:#102a3a; --muted:#4f6f80; --accent:#0ea5e9; --accent2:#22c55e; --link:#0284c7; --shadow:0 6px 20px rgba(0,0,0,.15); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html,body{ margin:0; background:linear-gradient(180deg,var(--bg2),var(--bg3)); color:var(--ink); font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif }
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{max-width:100%;height:auto;display:block;border:none}
+  .wrap{ max-width:1100px; margin:auto; padding:20px; padding-left:max(20px, env(safe-area-inset-left)); padding-right:max(20px, env(safe-area-inset-right)); }
+  header{ position:sticky;top:0; background:linear-gradient(180deg, rgba(210,238,247,.95),rgba(192,229,245,.85)); backdrop-filter:blur(6px); z-index:10; border-bottom:1px solid #a6d8f0 }
+  .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .brand img{height:60px;width:auto;display:block}
+  .pill{padding:.6rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06201e;font-weight:700;box-shadow:var(--shadow);white-space:nowrap}
+  .ghost{padding:.6rem 1rem;border:1px solid #a6d8f0;border-radius:999px;color:#152c38}
+  .card{background:linear-gradient(180deg,var(--card1),var(--card2));border:1px solid #a6d8f0;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column; margin-bottom:24px;}
+  .card h2{margin-top:0;}
+  .card h3{margin-top:16px;}
+  .list{margin-left:20px;}
+  blockquote{border-left:4px solid var(--ink); padding-left:15px; font-style:italic; margin:20px 0;}
+  footer{padding:32px 0;color:var(--muted);text-align:center;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="/images/WWC-logo.png" alt="Wrestling With Coherence logo" />
+    </div>
+    <nav class="cta">
+      <a class="ghost" href="/">Home</a>
+      <a class="pill" href="#article">Read Article</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap cols">
+      <div>
+        <h1>Full Body Awareness</h1>
+        <p class="lead">Internal Perspective & River Coherence in Wrestling</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
+  <section id="article">
+    <div class="wrap">
+      <article class="card">
+
+        <h2>Presence in the Process</h2>
+
+        <blockquote>Presence in the process leads to aligned action.</blockquote>
+
+        <p>Wrestlers are guided to focus internally—on the sensations, alignment, and organization of their own body—rather than on external outcomes or performance metrics.</p>
+
+        <p>By cultivating an internal perspective, the nervous system settles and the body responds more clearly to the unfolding moment.</p>
+
+        <p>This is why our wrestlers practice their 5-step process each morning. The purpose is not simply completion, but to develop presence and integrity with the process itself.</p>
+
+        <h3>Full Body Awareness</h3>
+
+        <p>Full body awareness deepens internal connection and enhances integration.</p>
+
+        <p>When awareness is distributed throughout the entire body, wrestlers can sense balance, structure, and center while remaining connected to their opponent and environment.</p>
+
+        <p>This embodies the core principles of internal martial arts, where movement is guided from awareness and alignment rather than muscular effort alone.</p>
+
+        <h3>River Coherence</h3>
+
+        <p>We use the phrase:</p>
+
+        <blockquote>“Surrendering to the current of the river.”</blockquote>
+
+        <p>This represents River Coherence—a state where the body and nervous system are organized, responsive, and flowing.</p>
+
+        <p>Full body awareness is not required to experience River Coherence, but it significantly amplifies it, allowing the system to move as one integrated unit.</p>
+
+        <p>By practicing the internal martial arts principles within the 5-step process, wrestlers strengthen their embodied awareness, and the flow of movement emerges naturally from presence.</p>
+
+        <p>Over time, wrestling becomes more than technique execution—it becomes aligned action emerging from internal presence.</p>
+
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y"></span> Cheagle LLC • Wrestling With Coherence • <a href="/privacy.html">Privacy Policy</a> • <a href="/terms.html">Terms</a></div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
